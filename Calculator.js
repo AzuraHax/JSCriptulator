@@ -128,3 +128,4 @@ function calc(e) {
         alert(answer);
     }
 }
+/*Coded By Azura*/
