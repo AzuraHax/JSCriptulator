@@ -2,6 +2,7 @@ javascript:
 
 var pr;
 var formulas;
+var p7 = '%';
 var p6 = 'sqr';
 var p5 = 'sin';
 var p4 = 'cos';
@@ -41,6 +42,8 @@ function calc(e) {
         } else if (p6 === pr) {
             sum = Math.sqrt(num1);
             x1 = 2;
+        } else if (p7 === pr) {
+            sum = x % y;
         }
         /*The Checking System And The Actual Calculator 
         Checks And Calculates The Things That Were
@@ -65,6 +68,8 @@ function calc(e) {
         var Cone = 'Cone';
         var Cyl = 'Cyl';
         var CtoFa = 'C';
+        var FatoC = 'Fa';
+        var KE = 'KE';
         var formulas = prompt('Enter a formula');
         if (formulas === Dist) {
             variable = 1;
@@ -121,11 +126,24 @@ function calc(e) {
             r1 = prompt('Radi');
             h = prompt('Height');
             answer = Math.PI * r1 * r1 * h;
-        } else if(formulas === CtoFa){
+            /*Calculate Volume Of A Sphere*/
+        } else if (formulas === CtoFa) {
+            variable = 1;
             var c = prompt('Celcsius');
-           answer = c * 9/5 + 32;
+            answer = c * 9 / 5 + 32;
+            /*Calculate Celsius To Farenheit*/
+        } else if (formulas === FatoC) {
+            variable = 1;
+            c = prompt('Celcius');
+            answer = (c * 2) + 30;
+            /*Calculate Farenheit To Celcius*/
+        } else if (formulas === KE) {
+            variable = 1;
+            var m = prompt('Mass');
+            var v = prompt('Velocity');
+            answer = 0.5 * m * v * v;
+            /*Calculate Kinetic Energy*/
         }
         alert(answer);
     }
 }
-/*Coded By Azura*/
