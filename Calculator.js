@@ -70,7 +70,11 @@ function calc(e) {
         var CtoFa = 'C';
         var FatoC = 'Fa';
         var KE = 'KE';
+        var Cube = 'Cube';
+        var Rect = 'Rect';
+        var redForm = 'redForm';
         var formulas = prompt('Enter a formula');
+        var TA = 'TAREA';
         if (formulas === Dist) {
             variable = 1;
             var x = prompt('Enter Coord 1 x');
@@ -143,7 +147,26 @@ function calc(e) {
             var v = prompt('Velocity');
             answer = 0.5 * m * v * v;
             /*Calculate Kinetic Energy*/
+        } else if (formulas === Cube) {
+            v = prompt('Edge');
+            answer = Math.pow(v, 3);
+        } else if (formulas === Rect) {
+            l = prompt('Length');
+            w = prompt('Width');
+            h = prompt('Height');
+            answer = l * w * h;
+        } else if (formulas === redForm) {
+            x = prompt('x');
+            var a = Math.cos((Math.PI / 2) + x);
+            alert('-sin(' + a + ')');
+        }else if(formulas === TA){
+            x = prompt('SideOne');
+            x1 = prompt('SideTwo');
+            h = prompt('Height');
+            answer = 1/2 * h * (x + x1);
         }
         alert(answer);
+    } else if (e.keyCode === 51) {
+
     }
 }
